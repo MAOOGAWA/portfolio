@@ -1,0 +1,642 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Noto Sans JP", sans-serif;
+font-weight: 500;
+}
+
+body {
+  background-color: #e6dcf4;
+  color: #333;
+  position: relative;
+  /* body自体に高さがないと背景が消えることがあるため追加 */
+  min-height: 100vh; 
+}
+
+.works, .skill, .about {
+  background-color: transparent !important;
+}
+
+img{
+width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+#contents-wrapper {
+  background-image: linear-gradient(
+      rgba(217, 204, 249, 0.8), 
+      rgba(217, 204, 249, 0.8)
+    ),
+    url("img/flower.png");
+
+  background-repeat: repeat;
+  background-size: 600px; /* ここの数字で花の大きさを調節できます */
+  width: 100%;
+}
+
+/* header */
+
+.header{
+background:#333;
+color:white;
+position:fixed;
+width:100%;
+z-index:100;
+}
+
+.header-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+}
+
+.logo span{
+font-size:12px;
+margin-left:10px;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+
+/* MV */
+
+.mv {
+    width: 100%;
+    height: 100vh; /* 画面いっぱいの高さ */
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* 画像の入れ物を画面いっぱいに固定 */
+.mv-img,
+.mv-img picture {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 画像自体の設定：これでPCもSPも中央に大きく表示されます */
+.mv-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* 比率を保って隙間なく埋める */
+    object-position: center; /* ど真ん中を基準にする */
+    display: block;
+}
+
+/* section */
+
+section{
+padding:100px 0;
+text-align: center;
+}
+
+.section-title{
+text-align:center;
+font-size:32px;
+margin-bottom:50px;
+border-bottom: 3px solid #b79de3; /* 線の太さ、種類、色（モックアップの背景色に合わせました） */
+    padding-bottom: 5px;             /* 文字と線の間の余白 */
+    margin-bottom: 15px;             /* 線と下の文章との間の余白 */
+    display: inline-block;
+}
+
+/* works */
+
+.works-grid{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.work-card {
+  background: linear-gradient(to bottom, #D1B1FF, #A28DBF);
+  border: none; 
+  border-radius: 25px; 
+  padding: 20px;
+  text-align: center;
+  transition: .3s;
+}
+
+.work-card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.work-categories{
+ display: flex;
+ justify-content: center;
+ gap: 10px;
+ margin-bottom: 10px;
+}
+
+.work-categories span {
+  background-color: #333333;
+  color: #D9C2F9;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* 制作物カード内の画像の設定 */
+.work-card img {
+  width: 100%;          
+  height: 200px;        
+  object-fit: contain;   
+  background-color: transparent; 
+  margin-bottom: 15px;  
+}
+
+/* カード全体：背景を薄紫にして角を丸める */
+.work-card {
+    background-color: #D9C2F9; /* 今使っている背景色 */
+    border-radius: 20px;
+    overflow: hidden; /* これがないと下の白ボックスが角からはみ出します */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 画像の設定：余白を作って紫部分を見せる */
+.work-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    padding: 20px 20px 10px; /* 上・左右・下に余白 */
+    margin-bottom: 0;
+}
+
+/* 【重要】新しく作った白いボックスの設定 */
+.work-body {
+    background-color: #F5F5F7; /* 白っぽい色 */
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1; /* カードの高さを揃える */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 詳細ボタンの微調整（背景が白になるので枠線や色を調整） */
+.detail-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 5px 30px;
+    border: 1px solid #ccc; /* 枠線を少しグレーに */
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* （おまけ）マウスを乗せた時の動き */
+.detail-btn:hover {
+  background-color: white; 
+  color: #A28DBF;          
+}
+
+/* works1以降 */
+
+.work-detail{
+
+background:#cdbce6;
+padding-top:120px;
+
+}
+
+.container{
+
+width:900px;
+margin:auto;
+
+}
+
+
+.tag span{
+
+background:#444;
+color:#D9C2F9;
+padding:6px 14px;
+border-radius:20px;
+margin-right:10px;
+font-size:12px;
+
+}
+
+
+.work-mv h2{
+
+font-size:36px;
+margin-top:20px;
+
+}
+
+/* 制作詳細の見出しに下線を引く */
+.work-detail h3 {
+    border-bottom: 3px solid #b79de3; /* 線の太さ、種類、色（モックアップの背景色に合わせました） */
+    padding-bottom: 5px;             /* 文字と線の間の余白 */
+    margin-bottom: 15px;             /* 線と下の文章との間の余白 */
+    
+    
+}
+
+/* 見出し（h3）と本文（p）をまとめて左寄せにする */
+.work-detail h3,
+.work-detail p {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px; /* ★ここを調整して、コンテンツ全体の幅を決めます */
+}
+
+/* 見出しと本文の間に少し隙間を作る */
+.work-detail h3 {
+  margin-bottom: 10px;
+}
+.url{
+
+margin-bottom:30px;
+color:#555;
+
+}
+
+
+.mockup{
+
+background:#b79de3;
+padding:40px;
+border-radius:30px;
+margin-top:30px;
+
+}
+
+
+.mockup img{
+
+width:100%;
+
+}
+
+
+
+/* info */
+
+.work-info{
+
+margin-top:80px;
+
+}
+
+.info-grid{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:60px;
+width:900px;
+margin:auto;
+
+}
+
+.info-grid h3{
+
+margin-bottom:10px;
+
+}
+
+
+
+/* preview */
+
+.work-preview{
+
+margin-top:80px;
+text-align:center;
+
+}
+
+.preview-switch{
+
+margin-bottom:30px;
+
+}
+
+.preview-switch button{
+
+padding:10px 30px;
+border:none;
+background:#ddd;
+cursor:pointer;
+border-radius:20px;
+
+}
+
+.preview-switch button.active{
+
+background:#444;
+color:white;
+
+}
+
+.preview{
+
+display:none;
+
+}
+
+.preview.active{
+
+display:block;
+animation:fade .5s;
+
+}
+
+.preview img{
+
+width:100%;
+max-width:900px;
+
+}
+
+
+
+/* nav */
+
+.work-nav{
+
+display:flex;
+justify-content:space-between;
+padding:80px 10%;
+
+}
+
+.work-nav a{
+
+display:flex;
+align-items:center;
+gap:10px;
+font-size:18px;
+transition:.3s;
+
+}
+
+.work-nav a:hover{
+
+transform:translateX(5px);
+
+}
+
+
+
+/* animation */
+
+.fade{
+
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+
+}
+
+.fade.show{
+
+opacity:1;
+transform:none;
+
+}
+
+
+
+@media(max-width:768px){
+
+.container{
+
+width:90%;
+
+}
+
+.info-grid{
+
+grid-template-columns:1fr;
+width:90%;
+
+}
+
+.work-nav{
+
+padding:80px 30px;
+
+}
+
+}
+
+/* skill */
+
+.skill-grid{
+width:80%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.skill-card{
+background:white;
+padding:25px;
+border-radius:15px;
+}
+
+/* about */
+
+.about-inner {
+    display: flex;
+    flex-direction: column; /* 横並びから縦並びに変更 */
+    align-items: center;    /* 子要素（画像とテキスト）を中央に揃える */
+    gap: 40px;
+    width: 100%;            /* 幅いっぱいに広げて中央配置しやすくする */
+    max-width: 800px;       /* 広がりすぎないよう制限 */
+    margin: 0 auto;         /* 画面中央に配置 */
+}
+
+.about-inner img {
+    width: 250px;
+    border-radius: 20px;
+}
+
+.about-text {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;       
+}
+
+.about-text h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.about-text h3 span {
+    font-size: 0.6em;       
+    font-weight: normal;    
+    margin-left: 10px;              
+}
+
+/* footer */
+
+.footer{
+background:#333;
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+.footer-nav{
+margin:20px 0;
+display:flex;
+justify-content:center;
+gap:30px;
+}
+
+.sns{
+margin:20px 0;
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.sns img{
+width:40px;
+}
+
+/* fadein */
+
+.fadein{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fadein.show{
+opacity:1;
+transform:none;
+}
+
+
+/* SP */
+@media screen and (max-width: 768px) {
+    .mv {
+        height: 100vh; /* スマホでもしっかり高さを出す */
+    }
+}
+
+.mv-inner{
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+.mv-text h2{
+font-size:42px;
+line-height:1.2;
+}
+
+.mv-img img{
+width:80%;
+max-width:300px;
+height:auto;
+}
+
+
+.nav{
+display:none;
+position:absolute;
+top:60px;
+right:0;
+background:#333;
+width:200px;
+padding:20px;
+}
+
+.nav ul{
+flex-direction:column;
+}
+
+.nav.active{
+display:block;
+}
+
+.hamburger{
+display:flex;
+flex-direction:column;
+gap:6px;
+cursor:pointer;
+}
+
+.hamburger span{
+width:25px;
+height:3px;
+background:white;
+}
+
+.mv-inner{
+flex-direction:column;
+gap:40px;
+}
+
+.mv-text h2{
+font-size:50px;
+}
+
+.works-grid{
+grid-template-columns:1fr;
+}
+
+.skill-grid{
+grid-template-columns:1fr;
+}
+
+.about-inner{
+flex-direction:column;
+}
+
+
+
+/* PC/SPボタンと画像を囲むセクションを真ん中に寄せる */
+.work-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* ボタンの横並びを維持しつつ、上下に余白を作る */
+.preview-switch {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* ボタン同士の間隔 */
+    margin-bottom: 30px; /* 画像との間の余白 */
+}
+
+/* 画像自体の横幅を調整（必要に応じて） */
+.preview img {
+    max-width: 100%;
+    height: auto;
+}
