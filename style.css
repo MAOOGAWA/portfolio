@@ -491,17 +491,10 @@ section {
 
     /* MVの画像サイズ調整 */
     .mv-img img {
-        width: 100vw;
-        /* 画面の横幅いっぱいに広げる */
-        height: 100vh;
-        /* 高さも画面いっぱいに */
-        object-fit: cover;
-        /* 比率を保ったまま切り抜く */
-
-        /* ここが重要！ */
-        /* PC版で設定した「50% 60%」などの指定を、スマホでは「センター」に戻す */
-        object-position: center;
-
+        width: 100%;
+        height: calc(100vh - 60px); /* 画面全高からヘッダー分（約60px）を引く */
+        object-fit: contain;       /* これで画像全体が画面内に収まります */
+        object-position: center;   /* 中央に配置 */
         display: block;
     }
 
@@ -622,6 +615,8 @@ section {
 @media screen and (max-width: 768px) {
     .mv {
         height: 100vh;
+        height: auto;
+        background-color: #e6dcf4;
     }
 
     /* ナビゲーションを隠してハンバーガーメニューにする */
